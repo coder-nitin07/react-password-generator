@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background-color: #000;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#root{
+    background-color: white;
+    padding: 20px;
+    width: 80%;
+}
+
+.flex{
+    display: flex;
+    justify-content: space-between;
+    margin: 5px;
+}
+
+.password{
+    padding: 10px 0;
+}
