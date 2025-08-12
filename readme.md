@@ -28,3 +28,17 @@ These instructions will get you a copy of the project up and running on your loc
 - npm or yarn
 
 ### Installation
+
+- 1. npm install
+    # or
+    yarn install
+
+- 2. Run the app-
+    npm parcel index.html
+    # or
+    yarn parcel index.html
+
+ - 3. The app should now be running at: http://localhost:1234
+
+    -ℹ️ Parcel uses port 1234 by default.
+
