@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import './style.css';
 
@@ -9,7 +9,7 @@ const App = ()=>{
     const [ specialCharacters, setSpecialCharacters ] = useState(false);
     const [ numbers, setNumbers ] = useState(false);
 
-    function generatePassword(){
+    const generatePassword = useCallback(()=>{
         let  upperCharacters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
         
         if(smallletters){
@@ -31,11 +31,35 @@ const App = ()=>{
         }
 
         setPassword(pass);
-    }
+    }, [ length, smallletters, specialCharacters, numbers ]);
+
+    // function generatePassword(){
+    //     let  upperCharacters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        
+    //     if(smallletters){
+    //         upperCharacters += 'abcdefghijklmnopqrstuvxyz';
+    //     }
+
+    //     if(specialCharacters){
+    //         upperCharacters += '!@#$%^&*()_+~';
+    //     }
+
+    //     if(numbers){
+    //         upperCharacters += '1234567890';
+    //     }
+
+    //     let pass = '';
+
+    //     for(let i=0; i< length; i++){
+    //         pass += upperCharacters[Math.floor(Math.random()*upperCharacters.length)]
+    //     }
+
+    //     setPassword(pass);
+    // }
 
     useEffect(()=>{
         generatePassword();
-    },[ length, smallletters, specialCharacters, numbers ]);
+    },[ generatePassword ]);
     return (
         <>
             <h1>Password Generator</h1>
